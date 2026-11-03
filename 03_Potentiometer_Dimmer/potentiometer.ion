@@ -1,0 +1,15 @@
+void setup() {
+  Serial.begin(9600); // Start communication with the computer
+  pinMode(7, OUTPUT);
+}
+
+void loop() {
+  int knobValue = analogRead(A0); // Read the knob (0 to 1023)
+  
+  Serial.println(knobValue); // Print the number to the screen
+  
+  digitalWrite(7, HIGH);
+  delay(knobValue);           // Wait based on the knob!
+  digitalWrite(7, LOW);
+  delay(knobValue);           // Wait based on the knob!
+}
